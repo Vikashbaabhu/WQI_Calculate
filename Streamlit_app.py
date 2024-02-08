@@ -6,7 +6,7 @@ import streamlit as st
 from PIL import Image
 
 
-pickle_in = open("model.pkl","rb")
+pickle_in = open("model2.pkl","rb")
 classifier=pickle.load(pickle_in)
 
 with open('style.css') as f :
@@ -17,7 +17,7 @@ def welcome():
 
 def predict_note_authentication(year,temp,do,ph,con,bod,n,fc,tc):
      
-    prediction=classifier.predict([[year,18,temp,5,do,6,ph,200,con,2.5,bod,0.3,n,500,fc,1000,tc]])
+    prediction=classifier.predict([[year,temp,do,ph,con,bod,n,fc,tc]])
     print(prediction)
     return prediction
 
